@@ -37,6 +37,7 @@ public class EnronSearchGatewayImpl
                     client.prepareSearch(ENRON_INDEX_NAME)
                             .setTypes(ENRON_MAIL_TYPE_NAME)
                             .setQuery(matchQuery)
+                            .setSize(100)
                             .setExplain(true);
 
             SearchResponse searchResponse = searchRequest.get();

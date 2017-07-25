@@ -37,6 +37,7 @@ public class EnronMailControllerImpl implements EnronMailController {
         String dtoResultJson = EnronMailDtoResultUtility.toJson(dtoResult);
 
         return Response.status(200)
+                .header("Access-Control-Allow-Origin", "*")
                 .entity(dtoResultJson)
                 .build();
     }
